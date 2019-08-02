@@ -4,10 +4,11 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import MainComponent from './component/MainComponent'
+import MainComponent from './component/MainComponent';
+import ListComponent from './component/ListComponent';
+import ReciepeComponent from './component/RecipeComponent';
 
 ReactDOM.render(
-
     <Router>
         <Route
             path="/"
@@ -16,6 +17,14 @@ ReactDOM.render(
         <Route
             path="/main"
             component={MainComponent}
+        />
+        <Route
+            path="/list"
+            component={ListComponent}
+        />
+        <Route
+            path="/recipe"
+            component={ReciepeComponent}
         />
     </Router>, document.getElementById('root'));
 
