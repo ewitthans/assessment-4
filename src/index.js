@@ -18,14 +18,6 @@ ReactDOM.render(
             path="/main"
             component={MainComponent}
         />
-        <Route
-            path="/list"
-            component={ListComponent}
-        />
-        <Route
-            path="/recipe"
-            component={ReciepeComponent}
-        />
     </Router>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

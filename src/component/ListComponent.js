@@ -4,19 +4,27 @@ export default class ListComponent extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            list: []
-        }
     }
 
+    componentDidMount() {
+
+    }
 
     render() {
+        console.log(this.props.list)
+
         return (
-            <div className="Container">
-                <div>
-                    List:
-                </div>
+            <div>
+                List:
             </div>
+            // <div className="Container">
+            //     {this.props.list.map((drinks) =>
+            //         <div>
+            //             {drinks.strDrink}
+            //         </div>
+            //     )}
+            // </div>
+
         )
     }
 }

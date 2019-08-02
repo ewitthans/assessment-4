@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCocktail } from '@fortawesome/free-solid-svg-icons';
 import { INGREDIENT_SEARCH_API_URL } from './config';
 
-export default class App extends Component {
+class App extends Component {
   constructor(props) {
     super(props);
 
@@ -20,12 +20,12 @@ export default class App extends Component {
     }
   }
 
-  handleSearchChange = (event) => {
+  handleSearchChange = event => {
     this.state.liquor = event.target.value;
   }
 
   initiateSearch = () => {
-    console.log(this.state.liquor)
+    //console.log(this.state.liquor)
 
     const requestOptions = {
       method: 'GET'
@@ -43,19 +43,22 @@ export default class App extends Component {
         this.setState({ 'list': list });
       })
 
-    console.log(this.state.list);
+    //console.log(this.state.list);
 
     this.props.history.push('/list');
+
   }
-
-
-
-
-
-
   render() {
+
+    //console.log(this.state.list, 'within render')
+
+    // const items = this.state.list;
+    // console.log(items, 'app render')
+
+    // const  listItems = items.map((items) => <li>{items}</li>));
+
     return (
-      <div className='Container'>
+      < div className='Container' >
         <Navbar bg="light" expand="lg">
           <div className="Icon">
             <FontAwesomeIcon icon={faCocktail} />
@@ -69,22 +72,37 @@ export default class App extends Component {
             </Form>
           </Navbar.Collapse>
         </Navbar>
+
         <div className='Wrapper'>
           {/* how to add homepage, route, components */}
           <Route
-            path="/" exact
-            render={(props) => <MainComponent />}
+            exact path="/"
+            render={(props) => <MainComponent {...props} list={this.state.list} />}
           />
           <Route
-            path="/d/:list"
-            render={(props) => <ListComponent {...props} />}
+            path="/list"
+            render={(props) => <ListComponent {...props} list={this.state.list} />}
           />
           <Route
             path="/recipe"
             render={(props) => <RecipeComponent {...props} />}
           />
         </div>
-      </div>
+
+
+        {/* <div>
+        <ul>{listItems}</ul>
+        </div> */}
+
+
+      </div >
+
+
+
+
     )
+
   }
 }
+
+export default App
