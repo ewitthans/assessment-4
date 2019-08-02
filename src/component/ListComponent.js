@@ -6,24 +6,19 @@ export default class ListComponent extends Component {
 
     }
 
-    componentDidMount() {
-
-    }
-
     render() {
         console.log(this.props.list)
 
         return (
             <div>
                 List:
+
+                    {/* {this.props.list.map(drink => (
+                    <div>
+                        <li key={drink.idDrink}>{drink.strDrink}</li>
+                    </div>
+                ))} */}
             </div>
-            // <div className="Container">
-            //     {this.props.list.map((drinks) =>
-            //         <div>
-            //             {drinks.strDrink}
-            //         </div>
-            //     )}
-            // </div>
 
         )
     }

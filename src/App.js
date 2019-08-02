@@ -77,7 +77,7 @@ class App extends Component {
           {/* how to add homepage, route, components */}
           <Route
             exact path="/"
-            render={(props) => <MainComponent {...props} list={this.state.list} />}
+            render={(props) => <MainComponent {...props}/>}
           />
           <Route
             path="/list"
