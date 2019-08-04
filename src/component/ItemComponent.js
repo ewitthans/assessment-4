@@ -7,14 +7,14 @@ export default class ItemComponent extends Component {
 
     handleTitleClick = (idDrink) => {
         console.log(idDrink);
-        this.props.history.push('/recipe');
+        //  this.props.history.push('/recipe');
     }
 
     render() {
         const { drinktitle } = this.props;
         // console.log(drinktitle, 'in post');
         return (
-            <div className=''>
+            <div >
 
                 <div className='DrinkTitle' onClick={() => this.handleTitleClick(drinktitle.idDrink)}>
                     {drinktitle.strDrink}

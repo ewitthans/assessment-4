@@ -8,7 +8,7 @@ export default class MainComponent extends Component {
     render() {
         return (
             <div className="Container">
-                Main Component
+                Search for a type of spirit!
             </div>
         )
     }

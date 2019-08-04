@@ -10,4 +10,52 @@
 .DrinkTitle:hover  {
   padding: 5px;
   color: green;
+  cursor: pointer;
+}
+
+.RecipeTitle {
+  font-size: 26px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Ingredients {
+  font-size: 25px;
+  float: left;
+  padding-left: 25%;
+}
+
+.IngredientsPerEach {
+  font-size: 14px;
+}
+.MeasuresPerEach {
+  font-size: 10px;
+}
+
+.Instructions {
+  font-size: 25px;
+  float: center;
+  max-width:62ch;
+  padding-left: 50%
+}
+
+.InstructionsPerEach {
+  font-size: 15px;
+}
+.Wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.Navigation {
+  font-size: 12px;
+}
+.Navigation:Hover {
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.debug {
+  border: 2px solid red;
 }
