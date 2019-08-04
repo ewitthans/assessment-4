@@ -1,25 +1,52 @@
 import React, { Component } from 'react';
+import ItemComponent from './ItemComponent';
+import { INGREDIENT_SEARCH_API_URL } from '../config';
 
 export default class ListComponent extends Component {
     constructor(props) {
         super(props);
 
+        this.state = {
+            liquor: this.props.liquor,
+            array: {
+                drinks: []
+            }
+        }
+
+    }
+
+    componentDidMount() {
+        console.log(this.state.liquor, 'in list');
+
+
+        const requestOptions = {
+            method: 'GET'
+        }
+
+        fetch(INGREDIENT_SEARCH_API_URL + this.state.liquor, requestOptions)
+
+            .then(res => {
+                if (!res.ok) {
+                    console.log('something bad happened');
+                }
+                return res.json();
+            })
+            .then(responseBody => {
+                this.setState({ array: responseBody });
+                console.log(this.state.array, 'in bun');
+            })
+
     }
 
     render() {
-        console.log(this.props.list)
 
         return (
-            <div>
-                List:
-
-                    {/* {this.props.list.map(drink => (
-                    <div>
-                        <li key={drink.idDrink}>{drink.strDrink}</li>
-                    </div>
-                ))} */}
+            <div className=''>
+                List
+                {this.state.array.drinks.map(drinktitle => (
+                    <ItemComponent key={this.idDrink} drinktitle={drinktitle} />
+                ))}
             </div>
-
         )
     }
 }

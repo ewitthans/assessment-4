@@ -6,3 +6,8 @@
   font-size: 20px;
   padding-right: 10px;
 }
+
+.DrinkTitle:hover  {
+  padding: 5px;
+  color: green;
+}

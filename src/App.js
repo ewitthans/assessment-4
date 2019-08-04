@@ -8,7 +8,6 @@ import ListComponent from './component/ListComponent';
 import RecipeComponent from './component/RecipeComponent';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCocktail } from '@fortawesome/free-solid-svg-icons';
-import { INGREDIENT_SEARCH_API_URL } from './config';
 
 class App extends Component {
   constructor(props) {
@@ -16,7 +15,6 @@ class App extends Component {
 
     this.state = {
       liquor: '',
-      list: []
     }
   }
 
@@ -25,37 +23,11 @@ class App extends Component {
   }
 
   initiateSearch = () => {
-    //console.log(this.state.liquor)
-
-    const requestOptions = {
-      method: 'GET'
-    }
-
-    fetch(INGREDIENT_SEARCH_API_URL + this.state.liquor, requestOptions)
-
-      .then(res => {
-        if (!res.ok) {
-          console.log('something bad happened');
-        }
-        return res.json();
-      })
-      .then(list => {
-        this.setState({ 'list': list });
-      })
-
-    //console.log(this.state.list);
-
+    console.log(this.state.liquor, 'in app')
     this.props.history.push('/list');
-
   }
+
   render() {
-
-    //console.log(this.state.list, 'within render')
-
-    // const items = this.state.list;
-    // console.log(items, 'app render')
-
-    // const  listItems = items.map((items) => <li>{items}</li>));
 
     return (
       < div className='Container' >
@@ -77,11 +49,11 @@ class App extends Component {
           {/* how to add homepage, route, components */}
           <Route
             exact path="/"
-            render={(props) => <MainComponent {...props}/>}
+            render={(props) => <MainComponent {...props} />}
           />
           <Route
             path="/list"
-            render={(props) => <ListComponent {...props} list={this.state.list} />}
+            render={(props) => <ListComponent {...props} liquor={this.state.liquor} handleTitleClick={this.handleTitleClick} />}
           />
           <Route
             path="/recipe"
@@ -89,16 +61,7 @@ class App extends Component {
           />
         </div>
 
-
-        {/* <div>
-        <ul>{listItems}</ul>
-        </div> */}
-
-
       </div >
-
-
-
 
     )
 

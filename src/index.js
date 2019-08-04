@@ -5,8 +5,6 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import MainComponent from './component/MainComponent';
-import ListComponent from './component/ListComponent';
-import ReciepeComponent from './component/RecipeComponent';
 
 ReactDOM.render(
     <Router>
