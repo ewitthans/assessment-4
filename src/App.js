@@ -27,6 +27,16 @@ class App extends Component {
     this.props.history.push('/list');
   }
 
+  handleTitleClick = (idDrink) => {
+    console.log(idDrink);
+    this.setState({ idDrink: this.state.idDrink });
+    console.log(this.state.idDrink, 'state');
+    this.props.history.push('/recipe');
+  }
+  navigate = () => {
+    console.log('success')
+    // this.props.history.push('/list');
+}
   render() {
 
     return (
@@ -57,7 +67,7 @@ class App extends Component {
           />
           <Route
             path="/recipe"
-            render={(props) => <RecipeComponent {...props} />}
+            render={(props) => <RecipeComponent {...props} />} idDrink={this.state.idDrink}
           />
 
         </div>

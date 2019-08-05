@@ -3,16 +3,21 @@ import React, { Component } from 'react';
 export default class ItemComponent extends Component {
     constructor(props) {
         super(props);
-    }
 
-    handleTitleClick = (idDrink) => {
+        this.state = {
+            idDrink: '',
+            justClicked: ''
+        }
+    }
+    handleTitleClick(idDrink) {
         console.log(idDrink);
-        //  this.props.history.push('/recipe');
+        //trying to set state and navigate to recipe page, currently not working
+        this.setState({ justClicked: idDrink });
+        console.log(this.state.justClicked);
+        // this.props.history.push('/recipe');
     }
-
     render() {
         const { drinktitle } = this.props;
-        // console.log(drinktitle, 'in post');
         return (
             <div >
 

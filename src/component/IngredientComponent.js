@@ -15,15 +15,15 @@ export default class IngredientComponent extends Component {
 
 
     render() {
-        const { drinktitle } = this.props;
+        const { list } = this.props;
         // console.log(drinktitle, 'in post');
         return (
             <div>
                 <div className='RecipeTitle'>
-                    {drinktitle.strDrink}
+                    {list.strDrink}
                     <div className='Navigation' onClick={() => this.navigate()}>
                         <FontAwesomeIcon icon={faArrowLeft} />
-                        Instructions Back to Drink List
+                        Back to Drink List
                 </div>
                 </div>
 
@@ -31,21 +31,21 @@ export default class IngredientComponent extends Component {
                     <div className='Ingredients'>
                         <FontAwesomeIcon icon={faBars} /> Ingredients
                     <div className='IngredientsPerEach'>
-                            {drinktitle.strIngredient1} <span className='MeasuresPerEach'>{drinktitle.strMeasure1} </span><br />
-                            {drinktitle.strIngredient2} <span className='MeasuresPerEach'>{drinktitle.strMeasure2} </span><br />
-                            {drinktitle.strIngredient3} <span className='MeasuresPerEach'>{drinktitle.strMeasure3} </span><br />
-                            {drinktitle.strIngredient4} <span className='MeasuresPerEach'>{drinktitle.strMeasure4} </span><br />
-                            {drinktitle.strIngredient5} <span className='MeasuresPerEach'>{drinktitle.strMeasure5} </span><br />
-                            {drinktitle.strIngredient6} <span className='MeasuresPerEach'>{drinktitle.strMeasure6} </span><br />
-                            {drinktitle.strIngredient7} <span className='MeasuresPerEach'>{drinktitle.strMeasure7} </span><br />
-                            {drinktitle.strIngredient8} <span className='MeasuresPerEach'>{drinktitle.strMeasure8} </span><br />
-                            {drinktitle.strIngredient9} <span className='MeasuresPerEach'>{drinktitle.strMeasure9} </span><br />
-                            {drinktitle.strIngredient10} <span className='MeasuresPerEach'>{drinktitle.strMeasure10} </span><br />
-                            {drinktitle.strIngredient11} <span className='MeasuresPerEach'>{drinktitle.strMeasure11} </span><br />
-                            {drinktitle.strIngredient12} <span className='MeasuresPerEach'>{drinktitle.strMeasure12} </span><br />
-                            {drinktitle.strIngredient13} <span className='MeasuresPerEach'>{drinktitle.strMeasure13} </span><br />
-                            {drinktitle.strIngredient14} <span className='MeasuresPerEach'>{drinktitle.strMeasure14} </span><br />
-                            {drinktitle.strIngredient15} <span className='MeasuresPerEach'>{drinktitle.strMeasure15} </span><br />
+                            {list.strIngredient1} <span className='MeasuresPerEach'>{list.strMeasure1} </span><br />
+                            {list.strIngredient2} <span className='MeasuresPerEach'>{list.strMeasure2} </span><br />
+                            {list.strIngredient3} <span className='MeasuresPerEach'>{list.strMeasure3} </span><br />
+                            {list.strIngredient4} <span className='MeasuresPerEach'>{list.strMeasure4} </span><br />
+                            {list.strIngredient5} <span className='MeasuresPerEach'>{list.strMeasure5} </span><br />
+                            {list.strIngredient6} <span className='MeasuresPerEach'>{list.strMeasure6} </span><br />
+                            {list.strIngredient7} <span className='MeasuresPerEach'>{list.strMeasure7} </span><br />
+                            {list.strIngredient8} <span className='MeasuresPerEach'>{list.strMeasure8} </span><br />
+                            {list.strIngredient9} <span className='MeasuresPerEach'>{list.strMeasure9} </span><br />
+                            {list.strIngredient10} <span className='MeasuresPerEach'>{list.strMeasure10} </span><br />
+                            {list.strIngredient11} <span className='MeasuresPerEach'>{list.strMeasure11} </span><br />
+                            {list.strIngredient12} <span className='MeasuresPerEach'>{list.strMeasure12} </span><br />
+                            {list.strIngredient13} <span className='MeasuresPerEach'>{list.strMeasure13} </span><br />
+                            {list.strIngredient14} <span className='MeasuresPerEach'>{list.strMeasure14} </span><br />
+                            {list.strIngredient15} <span className='MeasuresPerEach'>{list.strMeasure15} </span><br />
                         </div>
 
 
@@ -54,7 +54,7 @@ export default class IngredientComponent extends Component {
                     <div className='Instructions'>
                         <FontAwesomeIcon icon={faCheck} /> Instructions
                     <div className='InstructionsPerEach'>
-                            {drinktitle.strInstructions}
+                            {list.strInstructions}
                         </div>
                     </div>
 

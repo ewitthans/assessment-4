@@ -8,10 +8,12 @@ export default class RecipeComponent extends Component {
 
         this.state = {
             id: '16986',
+            //id: this.props.idDrink,
             ingredients: {
                 drinks: [0]
             }
         }
+        console.log(this.state.id, 'in recipe')
 
     }
 
@@ -41,8 +43,8 @@ export default class RecipeComponent extends Component {
         return (
             <div>
                 <div className='Wrapper'>
-                    {this.state.ingredients.drinks.map(drinktitle => (
-                        <IngredientComponent key={this.strGlass} drinktitle={drinktitle} />
+                    {this.state.ingredients.drinks.map(list => (
+                        <IngredientComponent key={this.strGlass} list={list} />
                     ))}
                 </div>
             </div>
