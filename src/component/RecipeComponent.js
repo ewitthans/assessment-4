@@ -9,14 +9,13 @@ export default class RecipeComponent extends Component {
         super(props);
 
         this.state = {
-            id: '14610',
-            // justClicked: this.props.justClicked,
+            id: '17229',
             idDrink: this.props.idDrink,
             ingredients: {
                 drinks: [0]
             }
         }
-        console.log(this.state.idDrink, 'in recipe')
+        console.log(this.state.idDrink)
 
     }
 
@@ -39,18 +38,17 @@ export default class RecipeComponent extends Component {
                 //console.log(this.state.ingredients);
             })
 
+
     }
 
     navigate() {
-        //console.log('success')
         this.props.history.push('/list');
     }
 
     render() {
-
         return (
             <div>
-                <div>
+                <div className=''>
                     {this.state.ingredients.drinks.map(list => (
                         <IngredientComponent key={this.idDrink} list={list} />
                     ))}
@@ -58,7 +56,7 @@ export default class RecipeComponent extends Component {
                 <div className='Navigation' onClick={() => this.navigate()}>
                     <FontAwesomeIcon icon={faArrowLeft} />
                     Back to Drink List
-        </div>
+                 </div>
             </div>
         )
     }

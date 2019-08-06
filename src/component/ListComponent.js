@@ -33,14 +33,14 @@ export default class ListComponent extends Component {
             })
             .then(responseBody => {
                 this.setState({ array: responseBody });
-                console.log(this.state.array, 'in bun');
+                //console.log(this.state);
             })
 
     }
 
     handleTitleClick() {
-        console.log('success');
         this.props.history.push('./recipe')
+        //console.log()
     }
 
     render() {

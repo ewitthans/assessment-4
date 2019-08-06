@@ -7,10 +7,7 @@ export default class IngredientComponent extends Component {
         super(props);
 
     }
-    navigate() {
-        console.log('success')
-        this.props.history.push('/list');
-    }
+
 
     render() {
         const { list } = this.props;

@@ -10,6 +10,7 @@ export default class ItemComponent extends Component {
     }
 
     handleTitleClick(idDrink) {
+        alert(idDrink);
         console.log(idDrink);
     }
 
@@ -26,3 +27,4 @@ export default class ItemComponent extends Component {
         )
     }
 }
+
