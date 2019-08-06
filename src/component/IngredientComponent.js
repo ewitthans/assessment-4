@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faCheck, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faCheck } from '@fortawesome/free-solid-svg-icons';
 
 export default class IngredientComponent extends Component {
     constructor(props) {
@@ -9,7 +9,7 @@ export default class IngredientComponent extends Component {
     }
     navigate() {
         console.log('success')
-        //this.props.history.push('/list');
+        this.props.history.push('/list');
     }
 
     render() {
@@ -19,10 +19,7 @@ export default class IngredientComponent extends Component {
             <div>
                 <div className='RecipeTitle'>
                     {list.strDrink}
-                    <a className='Navigation' href='/list' onClick={() => this.navigate()}>
-                        <FontAwesomeIcon icon={faArrowLeft} />
-                        Back to Drink List
-                </a>
+
                 </div>
 
                 <div>

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import IngredientComponent from './IngredientComponent';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faCheck, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { DRINK_SEARCH_API_URL } from '../config';
 
 export default class RecipeComponent extends Component {
@@ -39,15 +41,24 @@ export default class RecipeComponent extends Component {
 
     }
 
+    navigate() {
+        //console.log('success')
+        this.props.history.push('/list');
+    }
+
     render() {
 
         return (
             <div>
-                <div className='Wrapper'>
+                <div>
                     {this.state.ingredients.drinks.map(list => (
                         <IngredientComponent key={this.idDrink} list={list} />
                     ))}
                 </div>
+                <div className='Navigation' onClick={() => this.navigate()}>
+                    <FontAwesomeIcon icon={faArrowLeft} />
+                    Back to Drink List
+        </div>
             </div>
         )
     }

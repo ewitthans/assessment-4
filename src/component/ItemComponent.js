@@ -10,7 +10,6 @@ export default class ItemComponent extends Component {
     }
 
     handleTitleClick(idDrink) {
-        //this.props.completeTask(idDrink);
         console.log(idDrink);
     }
 
