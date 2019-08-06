@@ -8,6 +8,7 @@ import ListComponent from './component/ListComponent';
 import RecipeComponent from './component/RecipeComponent';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCocktail } from '@fortawesome/free-solid-svg-icons';
+import ItemComponent from './component/ItemComponent';
 
 class App extends Component {
   constructor(props) {
@@ -23,20 +24,10 @@ class App extends Component {
   }
 
   initiateSearch = () => {
-    console.log(this.state.liquor, 'in app')
     this.props.history.push('/list');
   }
 
-  handleTitleClick = (idDrink) => {
-    console.log(idDrink);
-    this.setState({ idDrink: this.state.idDrink });
-    console.log(this.state.idDrink, 'state');
-    this.props.history.push('/recipe');
-  }
-  navigate = () => {
-    console.log('success')
-    // this.props.history.push('/list');
-}
+
   render() {
 
     return (
@@ -62,12 +53,12 @@ class App extends Component {
             render={(props) => <MainComponent {...props} />}
           />
           <Route
-            path="/list"
-            render={(props) => <ListComponent {...props} liquor={this.state.liquor} handleTitleClick={this.handleTitleClick} />}
+            exact path="/list"
+            render={(props) => <ListComponent {...props} liquor={this.state.liquor} />}
           />
           <Route
             path="/recipe"
-            render={(props) => <RecipeComponent {...props} />} idDrink={this.state.idDrink}
+            render={(props) => <RecipeComponent {...props} idDrink={this.state.idDrink} />}
           />
 
         </div>

@@ -7,6 +7,11 @@
   padding-right: 10px;
 }
 
+.DrinkTitle {
+ /* text-decoration: none;
+  color: black; */
+}
+
 .DrinkTitle:hover  {
   padding: 5px;
   color: green;
@@ -50,10 +55,14 @@
 
 .Navigation {
   font-size: 12px;
+  text-decoration: none;
+  color: black;
 }
 .Navigation:Hover {
   font-size: 12px;
   cursor: pointer;
+  text-decoration: none;
+  color: black;
 }
 
 .debug {

@@ -6,22 +6,20 @@ export default class ItemComponent extends Component {
 
         this.state = {
             idDrink: '',
-            justClicked: ''
         }
     }
+
     handleTitleClick(idDrink) {
+        //this.props.completeTask(idDrink);
         console.log(idDrink);
-        //trying to set state and navigate to recipe page, currently not working
-        this.setState({ justClicked: idDrink });
-        console.log(this.state.justClicked);
-        // this.props.history.push('/recipe');
     }
+
     render() {
         const { drinktitle } = this.props;
         return (
             <div >
 
-                <div className='DrinkTitle' onClick={() => this.handleTitleClick(drinktitle.idDrink)}>
+                <div className='DrinkTitle' onClick={() => this.handleTitleClick(drinktitle.idDrink)}  >
                     {drinktitle.strDrink}
                 </div>
 

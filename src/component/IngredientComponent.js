@@ -7,12 +7,10 @@ export default class IngredientComponent extends Component {
         super(props);
 
     }
-
-    navigate = () => {
+    navigate() {
         console.log('success')
-        // this.props.history.push('/list');
+        //this.props.history.push('/list');
     }
-
 
     render() {
         const { list } = this.props;
@@ -21,10 +19,10 @@ export default class IngredientComponent extends Component {
             <div>
                 <div className='RecipeTitle'>
                     {list.strDrink}
-                    <div className='Navigation' onClick={() => this.navigate()}>
+                    <a className='Navigation' href='/list' onClick={() => this.navigate()}>
                         <FontAwesomeIcon icon={faArrowLeft} />
                         Back to Drink List
-                </div>
+                </a>
                 </div>
 
                 <div>

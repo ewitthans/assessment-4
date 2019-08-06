@@ -16,7 +16,7 @@ export default class ListComponent extends Component {
     }
 
     componentDidMount() {
-        console.log(this.state.liquor, 'in list');
+        // console.log(this.state.liquor, 'in list');
 
 
         const requestOptions = {
@@ -38,11 +38,15 @@ export default class ListComponent extends Component {
 
     }
 
+    handleTitleClick() {
+        console.log('success');
+        this.props.history.push('./recipe')
+    }
+
     render() {
 
         return (
-            <div className=''>
-                List
+            <div onClick={() => this.handleTitleClick()} >
                 {this.state.array.drinks.map(drinktitle => (
                     <ItemComponent key={this.idDrink} drinktitle={drinktitle} />
                 ))}

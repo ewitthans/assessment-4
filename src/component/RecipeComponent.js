@@ -7,13 +7,14 @@ export default class RecipeComponent extends Component {
         super(props);
 
         this.state = {
-            id: '16986',
-            //id: this.props.idDrink,
+            id: '14610',
+            // justClicked: this.props.justClicked,
+            idDrink: this.props.idDrink,
             ingredients: {
                 drinks: [0]
             }
         }
-        console.log(this.state.id, 'in recipe')
+        console.log(this.state.idDrink, 'in recipe')
 
     }
 
@@ -33,7 +34,7 @@ export default class RecipeComponent extends Component {
             })
             .then(responseBody => {
                 this.setState({ ingredients: responseBody });
-                console.log(this.state.ingredients);
+                //console.log(this.state.ingredients);
             })
 
     }
@@ -44,7 +45,7 @@ export default class RecipeComponent extends Component {
             <div>
                 <div className='Wrapper'>
                     {this.state.ingredients.drinks.map(list => (
-                        <IngredientComponent key={this.strGlass} list={list} />
+                        <IngredientComponent key={this.idDrink} list={list} />
                     ))}
                 </div>
             </div>
