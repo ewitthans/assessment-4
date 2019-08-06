@@ -18,7 +18,6 @@ export default class ListComponent extends Component {
     componentDidMount() {
         // console.log(this.state.liquor, 'in list');
 
-
         const requestOptions = {
             method: 'GET'
         }

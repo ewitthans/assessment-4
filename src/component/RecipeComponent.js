@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import IngredientComponent from './IngredientComponent';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faCheck, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { DRINK_SEARCH_API_URL } from '../config';
 
 export default class RecipeComponent extends Component {
@@ -10,12 +10,14 @@ export default class RecipeComponent extends Component {
 
         this.state = {
             id: '17229',
-            idDrink: this.props.idDrink,
+            // idDrink: this.props.idDrink,
             ingredients: {
                 drinks: [0]
+
             }
         }
-        console.log(this.state.idDrink)
+        // var x = sessionStorage.getItem("DrinkId");
+        // console.log(x);
 
     }
 
